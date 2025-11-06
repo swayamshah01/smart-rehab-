@@ -36,23 +36,23 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#1e293b]/50 to-[#581c87]/30 backdrop-blur-xl rounded-3xl p-8 border border-[#a855f7]/20">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50/30 backdrop-blur-xl rounded-3xl p-8 border border-blue-200 shadow-xl shadow-blue-200/30 hover:shadow-2xl hover:shadow-blue-300/30 transition-all duration-300">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
-        <h2 className="text-3xl font-bold text-white mb-3">
-          Tell us about your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] to-[#a855f7]">condition</span>
+        <h2 className="text-3xl font-bold text-slate-800 mb-3">
+          Tell us about your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">condition</span>
         </h2>
-        <p className="text-gray-400 text-lg">
+        <p className="text-slate-600 text-lg">
           Select the affected area and your condition type to personalize your recovery plan
         </p>
       </motion.div>
 
       {/* Body Area Selection */}
       <div className="mb-12">
-        <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+        <h3 className="text-xl font-semibold text-slate-800 mb-6 flex items-center gap-2">
           <span className="text-2xl">📍</span> Select Affected Area
         </h3>
         
@@ -68,12 +68,12 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
               onClick={() => setSelectedArea(area.id)}
               className={`p-4 rounded-xl border-2 transition-all ${
                 selectedArea === area.id
-                  ? 'bg-gradient-to-r from-[#22d3ee]/20 to-[#a855f7]/20 border-[#22d3ee] shadow-lg shadow-[#22d3ee]/30'
-                  : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50'
+                  ? 'bg-gradient-to-r from-blue-100 to-indigo-100 border-blue-400 shadow-lg shadow-blue-200/50'
+                  : 'bg-white border-blue-100 hover:border-blue-300'
               }`}
             >
               <div className="text-2xl mb-1">{area.icon}</div>
-              <div className="text-white text-sm font-medium">{area.label}</div>
+              <div className="text-slate-800 text-sm font-medium">{area.label}</div>
             </motion.button>
           ))}
         </div>
@@ -81,7 +81,7 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
 
       {/* Condition Type Selection */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+        <h3 className="text-xl font-semibold text-slate-800 mb-6 flex items-center gap-2">
           <span className="text-2xl">🏥</span> What's your condition?
         </h3>
         
@@ -97,8 +97,8 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
               onClick={() => setSelectedCondition(condition.id)}
               className={`p-6 rounded-2xl border-2 transition-all group ${
                 selectedCondition === condition.id
-                  ? `bg-gradient-to-br ${condition.gradient} border-transparent shadow-lg text-white`
-                  : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50 text-gray-300'
+                  ? `bg-gradient-to-br from-blue-500 to-indigo-600 border-transparent shadow-lg shadow-blue-200/50 text-white`
+                  : 'bg-white border-blue-100 hover:border-blue-300 text-slate-600 hover:shadow-lg hover:shadow-blue-100/20'
               }`}
             >
               <div className="text-4xl mb-3">{condition.icon}</div>
@@ -109,7 +109,7 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between items-center pt-6 border-t border-[#a855f7]/20">
+      <div className="flex justify-between items-center pt-6 border-t border-blue-100">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -117,8 +117,8 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
           disabled={isFirstStep}
           className={`px-6 py-3 rounded-full font-semibold transition-all ${
             isFirstStep
-              ? 'bg-[#334155] text-gray-500 cursor-not-allowed'
-              : 'bg-[#1e293b] text-white border-2 border-[#a855f7]/50 hover:bg-[#a855f7]/10'
+              ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
+              : 'bg-white text-slate-800 border-2 border-blue-200 hover:border-blue-300 hover:bg-blue-50 shadow-sm'
           }`}
         >
           Back
@@ -131,8 +131,8 @@ const SelectCondition = ({ data, onNext, onBack, isFirstStep }) => {
           disabled={!selectedArea || !selectedCondition}
           className={`px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 ${
             selectedArea && selectedCondition
-              ? 'bg-gradient-to-r from-[#22d3ee] to-[#a855f7] text-white shadow-lg shadow-[#a855f7]/50 hover:shadow-[#a855f7]/80'
-              : 'bg-[#334155] text-gray-500 cursor-not-allowed'
+              ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-200/50 hover:shadow-blue-300/80'
+              : 'bg-slate-100 text-slate-400 cursor-not-allowed'
           }`}
         >
           Continue

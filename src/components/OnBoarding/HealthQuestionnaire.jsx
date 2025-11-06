@@ -47,16 +47,16 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#1e293b]/50 to-[#581c87]/30 backdrop-blur-xl rounded-3xl p-8 border border-[#a855f7]/20">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50/30 backdrop-blur-xl rounded-3xl p-8 border border-blue-200 shadow-xl shadow-blue-200/30 hover:shadow-2xl hover:shadow-blue-300/30 transition-all duration-300">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
-        <h2 className="text-3xl font-bold text-white mb-3">
-          Health <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] to-[#a855f7]">Assessment</span>
+        <h2 className="text-3xl font-bold text-slate-800 mb-3">
+          Health <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Assessment</span>
         </h2>
-        <p className="text-gray-400 text-lg">
+        <p className="text-slate-600 text-lg">
           Help us understand your current condition and daily routine
         </p>
       </motion.div>
@@ -69,10 +69,10 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
         className="mb-8"
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-white font-semibold text-lg">Current Pain Level</h3>
+          <h3 className="text-slate-800 font-semibold text-lg">Current Pain Level</h3>
           <div className="flex items-center gap-2">
             <span className="text-3xl">{getPainEmoji(painLevel)}</span>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] to-[#a855f7]">
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
               {painLevel}/10
             </span>
           </div>
@@ -85,18 +85,18 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
             max="10"
             value={painLevel}
             onChange={(e) => setPainLevel(parseInt(e.target.value))}
-            className="w-full h-3 bg-[#334155] rounded-full appearance-none cursor-pointer
+            className="w-full h-3 bg-blue-100 rounded-full appearance-none cursor-pointer
               [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
               [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gradient-to-r
-              [&::-webkit-slider-thumb]:from-[#22d3ee] [&::-webkit-slider-thumb]:to-[#a855f7]
-              [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-[#a855f7]/50
+              [&::-webkit-slider-thumb]:from-blue-500 [&::-webkit-slider-thumb]:to-indigo-600
+              [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-indigo-500/30
               [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:transition-transform
               [&::-webkit-slider-thumb]:hover:scale-110
               [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:border-0
               [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gradient-to-r
-              [&::-moz-range-thumb]:from-[#22d3ee] [&::-moz-range-thumb]:to-[#a855f7]"
+              [&::-moz-range-thumb]:from-blue-500 [&::-moz-range-thumb]:to-indigo-600"
             style={{
-              background: `linear-gradient(to right, #10b981 0%, #f59e0b ${painLevel * 5}%, #ef4444 ${painLevel * 10}%, #334155 ${painLevel * 10}%, #334155 100%)`
+              background: `linear-gradient(to right, #3b82f6 0%, #6366f1 ${painLevel * 5}%, #4f46e5 ${painLevel * 10}%, #e2e8f0 ${painLevel * 10}%, #e2e8f0 100%)`
             }}
           />
         </div>
@@ -118,10 +118,10 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
         className="mb-8"
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-white font-semibold text-lg">Mobility Range</h3>
+          <h3 className="text-slate-800 font-semibold text-lg">Mobility Range</h3>
           <div className="flex items-center gap-2">
             <span className="text-3xl">{getMobilityEmoji(mobilityLevel)}</span>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] to-[#a855f7]">
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
               {mobilityLevel}/10
             </span>
           </div>
@@ -134,23 +134,23 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
             max="10"
             value={mobilityLevel}
             onChange={(e) => setMobilityLevel(parseInt(e.target.value))}
-            className="w-full h-3 bg-[#334155] rounded-full appearance-none cursor-pointer
+            className="w-full h-3 bg-blue-100 rounded-full appearance-none cursor-pointer
               [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
               [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gradient-to-r
-              [&::-webkit-slider-thumb]:from-[#a855f7] [&::-webkit-slider-thumb]:to-[#ec4899]
-              [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-[#ec4899]/50
+              [&::-webkit-slider-thumb]:from-blue-500 [&::-webkit-slider-thumb]:to-indigo-600
+              [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-indigo-500/30
               [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:transition-transform
               [&::-webkit-slider-thumb]:hover:scale-110
               [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:border-0
               [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gradient-to-r
-              [&::-moz-range-thumb]:from-[#a855f7] [&::-moz-range-thumb]:to-[#ec4899]"
+              [&::-moz-range-thumb]:from-blue-500 [&::-moz-range-thumb]:to-indigo-600"
             style={{
-              background: `linear-gradient(to right, #22d3ee ${mobilityLevel * 10}%, #334155 ${mobilityLevel * 10}%, #334155 100%)`
+              background: `linear-gradient(to right, #3b82f6 ${mobilityLevel * 10}%, #e2e8f0 ${mobilityLevel * 10}%, #e2e8f0 100%)`
             }}
           />
         </div>
         
-        <div className="flex justify-between mt-2 text-sm text-gray-400">
+        <div className="flex justify-between mt-2 text-sm text-slate-600">
           <span>Very Limited</span>
           <span>Limited</span>
           <span>Fair</span>
@@ -166,7 +166,7 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
         transition={{ delay: 0.3 }}
         className="mb-8"
       >
-        <h3 className="text-white font-semibold text-lg mb-4">Current Activity Level</h3>
+        <h3 className="text-slate-800 font-semibold text-lg mb-4">Current Activity Level</h3>
         <div className="grid md:grid-cols-2 gap-4">
           {activityLevels.map((level) => (
             <motion.button
@@ -176,15 +176,15 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
               onClick={() => setActivityLevel(level.id)}
               className={`p-4 rounded-xl border-2 transition-all text-left ${
                 activityLevel === level.id
-                  ? 'bg-gradient-to-r from-[#a855f7]/20 to-[#ec4899]/20 border-[#a855f7] shadow-lg shadow-[#a855f7]/30'
-                  : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50'
+                  ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-400 shadow-lg shadow-blue-300/30'
+                  : 'bg-white border-slate-200 hover:border-blue-300'
               }`}
             >
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">{level.icon}</span>
-                <span className="text-white font-semibold">{level.label}</span>
+                <span className="text-slate-800 font-semibold">{level.label}</span>
               </div>
-              <p className="text-gray-400 text-sm">{level.desc}</p>
+              <p className="text-slate-600 text-sm">{level.desc}</p>
             </motion.button>
           ))}
         </div>
@@ -197,7 +197,7 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
         transition={{ delay: 0.4 }}
         className="mb-8"
       >
-        <h3 className="text-white font-semibold text-lg mb-4">Daily Availability for Rehab</h3>
+        <h3 className="text-slate-800 font-semibold text-lg mb-4">Daily Availability for Rehab</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {availabilityOptions.map((option) => (
             <motion.button
@@ -207,24 +207,24 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
               onClick={() => setDailyAvailability(option.id)}
               className={`p-4 rounded-xl border-2 transition-all ${
                 dailyAvailability === option.id
-                  ? 'bg-gradient-to-r from-[#22d3ee]/20 to-[#a855f7]/20 border-[#22d3ee] shadow-lg shadow-[#22d3ee]/30'
-                  : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50'
+                  ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-400 shadow-lg shadow-blue-300/30'
+                  : 'bg-white border-slate-200 hover:border-blue-300'
               }`}
             >
               <div className="text-3xl mb-2">{option.icon}</div>
-              <div className="text-white text-sm font-medium">{option.label}</div>
+              <div className="text-slate-800 text-sm font-medium">{option.label}</div>
             </motion.button>
           ))}
         </div>
       </motion.div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between items-center pt-6 border-t border-[#a855f7]/20">
+      <div className="flex justify-between items-center pt-6 border-t border-slate-200">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onBack}
-          className="px-6 py-3 rounded-full font-semibold bg-[#1e293b] text-white border-2 border-[#a855f7]/50 hover:bg-[#a855f7]/10 transition-all"
+          className="px-6 py-3 rounded-full font-semibold bg-white text-slate-800 border-2 border-slate-200 hover:bg-slate-50 hover:border-blue-300 transition-all"
         >
           Back
         </motion.button>
@@ -233,7 +233,7 @@ const HealthQuestionnaire = ({ data, onNext, onBack }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleNext}
-          className="px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-[#22d3ee] to-[#a855f7] text-white shadow-lg shadow-[#a855f7]/50 hover:shadow-[#a855f7]/80 transition-all flex items-center gap-2"
+          className="px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all flex items-center gap-2"
         >
           Continue
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -61,16 +61,16 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#1e293b]/50 to-[#581c87]/30 backdrop-blur-xl rounded-3xl p-8 border border-[#a855f7]/20">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50/30 backdrop-blur-xl rounded-3xl p-8 border border-blue-200 shadow-xl shadow-blue-200/30">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
-        <h2 className="text-3xl font-bold text-white mb-3">
-          Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] to-[#a855f7]">Recovery Style</span>
+        <h2 className="text-3xl font-bold text-slate-800 mb-3">
+          Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Recovery Style</span>
         </h2>
-        <p className="text-gray-400 text-lg">
+        <p className="text-slate-600 text-lg">
           Select the approach that best fits your personality and preferences
         </p>
       </motion.div>
@@ -88,8 +88,8 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
             onClick={() => setSelectedStyle(style.id)}
             className={`w-full p-6 rounded-2xl border-2 transition-all text-left ${
               selectedStyle === style.id
-                ? `bg-gradient-to-r ${style.gradient} border-transparent shadow-lg shadow-[#a855f7]/50`
-                : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50'
+                ? `bg-gradient-to-r from-blue-100 to-indigo-100 border-blue-300 shadow-lg shadow-blue-300/30`
+                : 'bg-white border-slate-200 hover:border-blue-300'
             }`}
           >
             <div className="flex items-start gap-4">
@@ -97,8 +97,8 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
               <div className="flex-1">
                 <div className="flex items-start justify-between mb-2">
                   <div>
-                    <h3 className="text-white text-xl font-bold mb-1">{style.title}</h3>
-                    <p className={`text-sm font-semibold ${selectedStyle === style.id ? 'text-white/90' : 'text-gray-400'}`}>
+                    <h3 className="text-slate-800 text-xl font-bold mb-1">{style.title}</h3>
+                    <p className={`text-sm font-semibold ${selectedStyle === style.id ? 'text-slate-700' : 'text-slate-600'}`}>
                       {style.subtitle}
                     </p>
                   </div>
@@ -106,15 +106,15 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                      className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"
                     >
-                      <svg className="w-5 h-5 text-[#a855f7]" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </motion.div>
                   )}
                 </div>
-                <p className={`mb-4 ${selectedStyle === style.id ? 'text-white/80' : 'text-gray-400'}`}>
+                <p className={`mb-4 ${selectedStyle === style.id ? 'text-slate-700' : 'text-slate-600'}`}>
                   {style.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -123,8 +123,8 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
                       key={feature}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         selectedStyle === style.id
-                          ? 'bg-white/20 text-white'
-                          : 'bg-[#334155] text-gray-300'
+                          ? 'bg-blue-500/10 text-blue-700'
+                          : 'bg-slate-100 text-slate-600'
                       }`}
                     >
                       {feature}
@@ -144,9 +144,9 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
         transition={{ delay: 0.4 }}
         className="mb-8"
       >
-        <h3 className="text-white font-semibold text-lg mb-4 flex items-center gap-2">
+        <h3 className="text-slate-800 font-semibold text-lg mb-4 flex items-center gap-2">
           <span className="text-2xl">🎯</span> Select Your Recovery Goals
-          <span className="text-sm text-gray-400 font-normal">(Choose at least one)</span>
+          <span className="text-sm text-slate-500 font-normal">(Choose at least one)</span>
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {recoveryGoals.map((goal, index) => (
@@ -160,17 +160,17 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
               onClick={() => toggleGoal(goal.id)}
               className={`relative p-4 rounded-xl border-2 transition-all ${
                 selectedGoals.includes(goal.id)
-                  ? 'bg-gradient-to-r from-[#22d3ee]/20 to-[#a855f7]/20 border-[#22d3ee] shadow-lg shadow-[#22d3ee]/30'
-                  : 'bg-[#1e293b]/50 border-[#334155] hover:border-[#a855f7]/50'
+                  ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-300 shadow-lg shadow-blue-200/50'
+                  : 'bg-white border-slate-200 hover:border-blue-300'
               }`}
             >
               <div className="text-3xl mb-2">{goal.icon}</div>
-              <div className="text-white text-sm font-medium text-center">{goal.label}</div>
+              <div className="text-slate-700 text-sm font-medium text-center">{goal.label}</div>
               {selectedGoals.includes(goal.id) && (
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute top-2 right-2 w-5 h-5 bg-[#22d3ee] rounded-full flex items-center justify-center"
+                  className="absolute top-2 right-2 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center"
                 >
                   <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -183,12 +183,12 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
       </motion.div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between items-center pt-6 border-t border-[#a855f7]/20">
+      <div className="flex justify-between items-center pt-6 border-t border-slate-200">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onBack}
-          className="px-6 py-3 rounded-full font-semibold bg-[#1e293b] text-white border-2 border-[#a855f7]/50 hover:bg-[#a855f7]/10 transition-all"
+          className="px-6 py-3 rounded-full font-semibold bg-white text-slate-800 border-2 border-slate-200 hover:bg-slate-50 hover:border-blue-300 transition-all"
         >
           Back
         </motion.button>
@@ -200,8 +200,8 @@ const RecoveryStyle = ({ data, onNext, onBack }) => {
           disabled={!selectedStyle || selectedGoals.length === 0}
           className={`px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 ${
             selectedStyle && selectedGoals.length > 0
-              ? 'bg-gradient-to-r from-[#22d3ee] to-[#a855f7] text-white shadow-lg shadow-[#a855f7]/50 hover:shadow-[#a855f7]/80'
-              : 'bg-[#334155] text-gray-500 cursor-not-allowed'
+              ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50'
+              : 'bg-slate-100 text-slate-400 cursor-not-allowed'
           }`}
         >
           Continue

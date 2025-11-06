@@ -53,7 +53,7 @@ const handleFinish = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#581c87] to-[#0f172a] relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-50 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -66,7 +66,7 @@ const handleFinish = () => {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#a855f7]/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -78,12 +78,12 @@ const handleFinish = () => {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#22d3ee]/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl"
         />
       </div>
 
       {/* Header */}
-      <header className="relative z-10 border-b border-[#a855f7]/20 bg-[#0f172a]/80 backdrop-blur-md">
+      <header className="relative z-10 border-b border-blue-100 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -91,10 +91,10 @@ const handleFinish = () => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-[#22d3ee] to-[#a855f7] rounded-lg flex items-center justify-center shadow-lg shadow-[#a855f7]/50">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200/50">
               <span className="text-white font-bold text-xl">R+</span>
             </div>
-            <span className="text-white font-bold text-xl">RehabAI</span>
+            <span className="text-slate-800 font-bold text-xl">IntelliRehab</span>
           </motion.div>
 
           <motion.button
@@ -103,7 +103,7 @@ const handleFinish = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/')}
-            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+            className="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -114,22 +114,22 @@ const handleFinish = () => {
       </header>
 
       {/* Progress Bar */}
-      <div className="relative z-10 bg-[#1e293b]/50 backdrop-blur-sm">
+      <div className="relative z-10 bg-white/80 backdrop-blur-sm border-b border-blue-100">
         <div className="max-w-4xl mx-auto px-6 py-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-white font-semibold text-lg">
+            <h2 className="text-slate-800 font-semibold text-lg">
               Step {currentStep} of {totalSteps}
             </h2>
-            <span className="text-[#22d3ee] font-semibold">{Math.round(progress)}%</span>
+            <span className="text-blue-600 font-semibold">{Math.round(progress)}%</span>
           </div>
 
           {/* Progress Bar */}
-          <div className="relative h-3 bg-[#334155] rounded-full overflow-hidden">
+          <div className="relative h-3 bg-blue-100 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5, ease: 'easeInOut' }}
-              className="h-full bg-gradient-to-r from-[#22d3ee] via-[#a855f7] to-[#ec4899] rounded-full relative"
+              className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full relative"
             >
               <motion.div
                 animate={{ x: ['-100%', '100%'] }}
@@ -148,10 +148,10 @@ const handleFinish = () => {
                   animate={{ scale: 1 }}
                   className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
                     step.id < currentStep
-                      ? 'bg-gradient-to-r from-[#22d3ee] to-[#a855f7] text-white'
+                      ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-sm'
                       : step.id === currentStep
-                      ? 'bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white shadow-lg shadow-[#a855f7]/50'
-                      : 'bg-[#334155] text-gray-400'
+                      ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg shadow-blue-200/50'
+                      : 'bg-blue-100 text-slate-400'
                   }`}
                 >
                   {step.id < currentStep ? (
@@ -166,7 +166,7 @@ const handleFinish = () => {
                     step.id
                   )}
                 </motion.div>
-                <span className="text-xs text-gray-400 text-center hidden md:block max-w-[80px]">
+                <span className="text-xs text-slate-600 text-center hidden md:block max-w-[80px]">
                   {step.title}
                 </span>
               </div>
@@ -183,22 +183,36 @@ const handleFinish = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
+            transition={{ 
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+            className="transform-gpu"
           >
             {currentStep === 1 && (
-              <SelectCondition data={formData} onNext={handleNext} onBack={handleBack} isFirstStep={true} />
+              <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                <SelectCondition data={formData} onNext={handleNext} onBack={handleBack} isFirstStep={true} />
+              </motion.div>
             )}
             {currentStep === 2 && (
-              <UploadReports data={formData} onNext={handleNext} onBack={handleBack} />
+              <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                <UploadReports data={formData} onNext={handleNext} onBack={handleBack} />
+              </motion.div>
             )}
             {currentStep === 3 && (
-              <HealthQuestionnaire data={formData} onNext={handleNext} onBack={handleBack} />
+              <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                <HealthQuestionnaire data={formData} onNext={handleNext} onBack={handleBack} />
+              </motion.div>
             )}
             {currentStep === 4 && (
-              <RecoveryStyle data={formData} onNext={handleNext} onBack={handleBack} />
+              <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                <RecoveryStyle data={formData} onNext={handleNext} onBack={handleBack} />
+              </motion.div>
             )}
             {currentStep === 5 && (
-              <ProfileSummary data={formData} onBack={handleBack} onFinish={handleFinish} />
+              <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                <ProfileSummary data={formData} onBack={handleBack} onFinish={handleFinish} />
+              </motion.div>
             )}
           </motion.div>
         </AnimatePresence>

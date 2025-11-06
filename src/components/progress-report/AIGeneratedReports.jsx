@@ -85,7 +85,7 @@ const AIGeneratedReports = ({ userData, analyticsData, userName, userLogin, days
       </motion.div>
 
       {/* Report Type Selector */}
-      <div className="flex gap-4 mb-8">
+      <div className="grid grid-cols-4 gap-3 mb-8">
         {reportTypes.map((type, index) => (
           <motion.button
             key={type.id}
@@ -95,14 +95,14 @@ const AIGeneratedReports = ({ userData, analyticsData, userName, userLogin, days
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedReport(type.id)}
-            className={`flex-1 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
+            className={`flex-1 px-6 py-3 rounded-xl font-medium text-sm transition-all flex flex-col items-center justify-center gap-1.5 ${
               selectedReport === type.id
                 ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg`
-                : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200'
             }`}
           >
-            <span className="text-2xl">{type.icon}</span>
-            {type.label}
+            <span className="text-2xl mb-1">{type.icon}</span>
+            <span className="text-center whitespace-nowrap">{type.label}</span>
           </motion.button>
         ))}
       </div>
