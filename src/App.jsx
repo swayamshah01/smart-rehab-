@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LandingPage from './Pages/LandingPage';
 import LoginPage from './Pages/LoginPage';
 import SignupPage from './Pages/SignupPage';
-import OnboardingPage from './Pages/OnboardingPage';
+import OnBoardingPage from './Pages/OnBoardingPage';
 import MedicalReportPage from './Pages/MedicalReportPage';
 import DashboardPage from './Pages/DashboardPage';
 import GamifiedRehabPage from './Pages/GamifiedRehabPage';
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/onboarding" element={<OnBoardingPage />} />
           <Route path="/medical-report" element={<MedicalReportPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/gamified" element={<GamifiedRehabPage />} />
