@@ -42,7 +42,7 @@ const LoginPage = () => {
         if (userData.email === formData.email) {
           // Successful login
           localStorage.setItem('rehabAuthToken', 'authenticated');
-          navigate('/dashboard', { state: userData });
+          navigate('/onboarding', { state: userData });
         } else {
           setError('Invalid email or password');
         }
