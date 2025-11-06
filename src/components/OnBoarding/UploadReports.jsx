@@ -165,8 +165,8 @@ const UploadReports = ({ data, onNext, onBack }) => {
           <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
         </svg>
         <div>
-          <h4 className="text-white font-semibold mb-1">Your privacy is protected</h4>
-          <p className="text-gray-400 text-sm">
+          <h4 className="text-slate-800 font-semibold mb-1">Your privacy is protected</h4>
+          <p className="text-slate-600 text-sm">
             All medical documents are encrypted and HIPAA-compliant. Only you and your authorized healthcare providers can access them.
           </p>
         </div>
