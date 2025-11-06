@@ -2,7 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const DashboardSidebar = ({ activeModule, setActiveModule, sidebarOpen, setSidebarOpen, userData, userProgress }) => {
+const DashboardSidebar = ({
+  activeModule,
+  setActiveModule,
+  sidebarOpen,
+  setSidebarOpen,
+  userData,
+  userProgress,
+}) => {
   const navigate = useNavigate();
 
   const modules = [
@@ -16,7 +23,8 @@ const DashboardSidebar = ({ activeModule, setActiveModule, sidebarOpen, setSideb
     <motion.div
       initial={{ x: -300 }}
       animate={{ x: sidebarOpen ? 0 : -300 }}
-      className={`fixed left-0 top-0 h-full bg-white shadow-2xl z-40 w-80 overflow-y-auto`}
+      transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+      className={`fixed lg:static top-0 left-0 h-full bg-white shadow-2xl z-40 w-80 overflow-y-auto lg:translate-x-0`}
     >
       <div className="p-6">
         {/* Logo & Close */}
@@ -47,7 +55,7 @@ const DashboardSidebar = ({ activeModule, setActiveModule, sidebarOpen, setSideb
               👤
             </div>
             <div>
-              <p className="font-bold">swayamshah01</p>
+              <p className="font-bold">{userData?.username || 'swayamshah01'}</p>
               <p className="text-sm opacity-90">Level {userProgress?.level || 3}</p>
             </div>
           </div>
@@ -205,17 +213,10 @@ const DashboardSidebar = ({ activeModule, setActiveModule, sidebarOpen, setSideb
             <p className="text-xs font-semibold text-[#22d3ee]">Current Session</p>
           </div>
           <p className="text-sm font-bold text-[#0f172a]">
-            {new Date('2025-11-06T11:08:24Z').toLocaleDateString('en-US', { 
-              month: 'short', 
-              day: 'numeric', 
-              year: 'numeric' 
-            })}
+            {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </p>
           <p className="text-xs text-gray-600">
-            {new Date('2025-11-06T11:08:24Z').toLocaleTimeString('en-US', {
-              hour: '2-digit',
-              minute: '2-digit'
-            })}
+            {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
           </p>
         </div>
       </div>
