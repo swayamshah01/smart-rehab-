@@ -17,9 +17,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-purple-500/20">
+    <footer className="relative overflow-hidden border-t border-blue-100">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-white" />
 
       <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
@@ -29,13 +29,13 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2 mb-4 cursor-pointer"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/50">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200/50">
                 <span className="text-white font-bold text-2xl">R+</span>
               </div>
-              <span className="text-white font-bold text-2xl">RehabAI</span>
+              <span className="text-slate-800 font-bold text-2xl">IntelliRehab</span>
             </motion.div>
             
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-slate-600 mb-6 leading-relaxed">
               Transform your recovery journey with AI-powered personalized rehabilitation. 
               Heal smarter, recover faster, and achieve your wellness goals.
             </p>
@@ -48,7 +48,7 @@ const Footer = () => {
                   href={social.url}
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-gradient-to-br from-slate-800 to-purple-900/50 border border-purple-500/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all"
+                  className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 border border-blue-100 rounded-lg flex items-center justify-center text-white hover:shadow-lg hover:shadow-blue-200/50 transition-all"
                   aria-label={social.name}
                 >
                   <span className="text-sm font-bold">{social.icon}</span>
@@ -60,14 +60,14 @@ const Footer = () => {
           {/* Links Sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-white font-semibold mb-4">{category}</h3>
+              <h3 className="text-slate-800 font-semibold mb-4">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <motion.li key={link}>
                     <motion.a
                       href="#"
-                      whileHover={{ x: 5, color: '#22d3ee' }}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors inline-block"
+                      whileHover={{ x: 5, color: '#3B82F6' }}
+                      className="text-slate-600 hover:text-blue-500 transition-colors inline-block"
                     >
                       {link}
                     </motion.a>
@@ -83,14 +83,14 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-slate-800/50 to-purple-900/30 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 mb-12"
+          className="bg-gradient-to-br from-blue-50 to-indigo-50/30 backdrop-blur-xl rounded-2xl p-8 border border-blue-100 mb-12 shadow-lg shadow-blue-100/20"
         >
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">
                 Stay Updated
               </h3>
-              <p className="text-gray-400">
+              <p className="text-slate-600">
                 Get the latest updates on new features, rehab tips, and wellness insights.
               </p>
             </div>
@@ -98,12 +98,12 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-slate-900/50 border border-purple-500/20 rounded-full px-6 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition-all"
+                className="flex-1 bg-white/90 border border-blue-100 rounded-full px-6 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-300 transition-all"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-all whitespace-nowrap"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-200/50 hover:shadow-blue-300/80 transition-all whitespace-nowrap"
               >
                 Subscribe
               </motion.button>
@@ -112,31 +112,31 @@ const Footer = () => {
         </motion.div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-purple-500/20">
+        <div className="pt-8 border-t border-blue-100">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-sm">
-              © 2025 RehabAI. All rights reserved. Built with ❤️ for better recovery.
+            <div className="text-slate-600 text-sm">
+              © 2025 IntelliRehab. All rights reserved. Built with ❤️ for better recovery.
             </div>
 
-            <div className="flex flex-wrap gap-6 text-sm text-gray-400">
+            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
               <motion.a
                 href="#"
-                whileHover={{ color: '#22d3ee' }}
-                className="hover:text-cyan-400 transition-colors"
+                whileHover={{ color: '#3B82F6' }}
+                className="hover:text-blue-500 transition-colors"
               >
                 Privacy Policy
               </motion.a>
               <motion.a
                 href="#"
-                whileHover={{ color: '#22d3ee' }}
-                className="hover:text-cyan-400 transition-colors"
+                whileHover={{ color: '#3B82F6' }}
+                className="hover:text-blue-500 transition-colors"
               >
                 Terms of Service
               </motion.a>
               <motion.a
                 href="#"
-                whileHover={{ color: '#22d3ee' }}
-                className="hover:text-cyan-400 transition-colors"
+                whileHover={{ color: '#3B82F6' }}
+                className="hover:text-blue-500 transition-colors"
               >
                 Cookie Settings
               </motion.a>
@@ -151,7 +151,7 @@ const Footer = () => {
             opacity: [0.3, 0.5, 0.3] 
           }}
           transition={{ duration: 4, repeat: Infinity }}
-          className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"
+          className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl pointer-events-none"
         />
         <motion.div
           animate={{ 
@@ -159,7 +159,7 @@ const Footer = () => {
             opacity: [0.5, 0.3, 0.5] 
           }}
           transition={{ duration: 4, repeat: Infinity }}
-          className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"
+          className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-200/20 rounded-full blur-3xl pointer-events-none"
         />
       </div>
     </footer>

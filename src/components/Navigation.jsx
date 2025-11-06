@@ -23,7 +23,7 @@ const Navigation = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 w-full z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-purple-500/10'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-blue-200/30'
           : 'bg-transparent'
       }`}
     >
@@ -33,10 +33,10 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           className="flex items-center space-x-2 cursor-pointer"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/50">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200/50">
             <span className="text-white font-bold text-xl">R+</span>
           </div>
-          <span className="text-white font-bold text-xl">RehabAI</span>
+          <span className="text-slate-800 font-bold text-xl">IntelliRehab</span>
         </motion.div>
 
         {/* Navigation Links */}
@@ -49,7 +49,7 @@ const Navigation = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.1, color: '#22d3ee' }}
-              className="text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer"
+              className="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer"
             >
               {item}
             </motion.a>
@@ -61,7 +61,7 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate('/signup')}
-          className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-all"
+          className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg shadow-blue-200/50 hover:shadow-blue-300/80 transition-all"
         >
           Get Started
         </motion.button>

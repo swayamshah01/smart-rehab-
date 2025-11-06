@@ -18,10 +18,10 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen overflow-x-hidden">
+    <div className="bg-gradient-to-br from-[#E7F5FE] via-white to-[#F0F7FF] min-h-screen overflow-x-hidden">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
 

@@ -11,21 +11,21 @@ const HowItWorksSection = () => {
       icon: '📄',
       title: 'Upload Medical Report',
       description: 'Securely upload your medical reports and injury details. Our AI analyzes your condition instantly.',
-      color: 'from-cyan-400 to-blue-500',
+      color: 'from-blue-500 to-indigo-600',
     },
     {
       number: '02',
       icon: '🤖',
       title: 'Get AI-Based Recovery Plan',
       description: 'Receive a personalized rehab plan tailored to your injury, fitness level, and recovery goals.',
-      color: 'from-purple-400 to-purple-600',
+      color: 'from-indigo-500 to-blue-600',
     },
     {
       number: '03',
       icon: '📊',
       title: 'Track Progress & Heal',
       description: 'Follow guided exercises, track your progress, and achieve milestones with real-time feedback.',
-      color: 'from-pink-400 to-rose-500',
+      color: 'from-blue-500 to-indigo-500',
     },
   ];
 
@@ -50,14 +50,14 @@ const HowItWorksSection = () => {
           <motion.span
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            className="text-cyan-400 font-semibold tracking-wider text-sm"
+            className="text-blue-600 font-semibold tracking-wider text-sm"
           >
             SIMPLE & EFFECTIVE
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
-            How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Works</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mt-2 mb-4">
+            How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Works</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             Three simple steps to transform your recovery journey with AI-powered personalization
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const HowItWorksSection = () => {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 1.5, delay: 0.5 }}
-              className="h-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 origin-left"
+              className="h-full bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-600 origin-left"
             />
           </div>
 
@@ -83,10 +83,10 @@ const HowItWorksSection = () => {
             >
               <motion.div
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-slate-800/50 to-purple-900/30 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 h-full relative overflow-hidden group"
+                className="bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-blue-100 h-full relative overflow-hidden group shadow-lg shadow-blue-100/20 hover:shadow-blue-200/30"
               >
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100/80 group-hover:to-indigo-100/80 transition-all duration-500" />
 
                 {/* Step Number */}
                 <motion.div
@@ -98,14 +98,14 @@ const HowItWorksSection = () => {
                   <span className="text-3xl">{step.icon}</span>
                 </motion.div>
 
-                <div className="absolute top-8 right-8 text-6xl font-bold text-white/5">
+                <div className="absolute top-8 right-8 text-6xl font-bold text-slate-200/50">
                   {step.number}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 relative z-10">
+                <h3 className="text-2xl font-bold text-slate-800 mb-4 relative z-10">
                   {step.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed relative z-10">
+                <p className="text-slate-600 leading-relaxed relative z-10">
                   {step.description}
                 </p>
 
@@ -114,7 +114,7 @@ const HowItWorksSection = () => {
                   <motion.div
                     animate={{ x: [0, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-cyan-400"
+                    className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-blue-500"
                   >
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -136,7 +136,7 @@ const HowItWorksSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-purple-500/50 inline-flex items-center gap-3"
+            className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-200/50 hover:shadow-blue-300/80 inline-flex items-center gap-3"
           >
             <span>See It In Action</span>
             <motion.svg

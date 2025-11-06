@@ -34,7 +34,7 @@ const DashboardSidebar = ({
               <span className="text-white font-bold text-xl">R</span>
             </div>
             <div>
-              <h2 className="text-xl font-bold text-[#0f172a]">Rehab Hub</h2>
+              <h2 className="text-xl font-bold text-[#0f172a]">IntelliRehab</h2>
               <p className="text-xs text-gray-600">Your Recovery Journey</p>
             </div>
           </div>

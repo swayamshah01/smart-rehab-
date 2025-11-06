@@ -136,7 +136,7 @@ const SignupPage = () => {
               <span className="text-white font-bold text-2xl">R</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-[#0f172a]">Rehab Hub</h1>
+              <h1 className="text-2xl font-bold text-[#0f172a]">IntelliRehab</h1>
               <p className="text-sm text-gray-600">Your Recovery Journey</p>
             </div>
           </motion.div>

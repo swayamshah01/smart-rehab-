@@ -18,7 +18,7 @@ const StatsSection = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-200/20 to-indigo-200/20 rounded-full blur-3xl"
         />
       </div>
 
@@ -29,10 +29,10 @@ const StatsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Thousands</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Thousands</span>
           </h2>
-          <p className="text-gray-400 text-lg">Real results from real people on their recovery journey</p>
+          <p className="text-slate-600 text-lg">Real results from real people on their recovery journey</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -81,10 +81,10 @@ const StatCard = ({ stat, index, isInView }) => {
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -10, scale: 1.05 }}
-      className="bg-gradient-to-br from-slate-800/50 to-purple-900/30 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 text-center relative overflow-hidden group"
+      className="bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-blue-100 text-center relative overflow-hidden group shadow-lg shadow-blue-100/20 hover:shadow-blue-200/30"
     >
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/10 to-cyan-500/0"
+        className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-indigo-500/5 to-blue-500/0"
         animate={{ x: ['-100%', '100%'] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
       />
@@ -98,12 +98,12 @@ const StatCard = ({ stat, index, isInView }) => {
         {stat.icon}
       </motion.div>
 
-      <motion.div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-2">
+      <motion.div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600 mb-2">
         {formatNumber(count)}
         {stat.suffix}
       </motion.div>
 
-      <div className="text-gray-400 font-medium">{stat.label}</div>
+      <div className="text-slate-600 font-medium">{stat.label}</div>
     </motion.div>
   );
 };
